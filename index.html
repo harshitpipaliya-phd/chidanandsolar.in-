@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidanand Solar | #1 Solar Company in India | Save 100% on Electricity</title>
+    <meta name="description" content="Chidanand Solar provides top-quality solar panel installations for homes & businesses. Get a FREE quote today & save up to 90% on electricity bills!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00; /* Vibrant Orange */
+            --secondary: #2C3E50; /* Dark Blue */
+            --light: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #777777;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        .navbar-brand img {
+            height: 70px; /* Bigger logo */
+            transition: all 0.3s;
+        }
+        
+        .nav-link {
+            color: var(--secondary);
+            font-weight: 600;
+            margin: 0 12px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border-radius: 8px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #E05D00;
+            border-color: #E05D00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            padding: 150px 0;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--primary);
+            bottom: -15px;
+            left: 0;
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: var(--gray);
+        }
+        
+        .benefits-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+        }
+        
+        .benefit-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .features-section {
+            padding: 100px 0;
+            background-color: var(--gray);
+        }
+        
+        .feature-box {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .projects-section {
+            padding: 100px 0;
+        }
+        
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .project-info {
+            padding: 25px;
+            background: var(--light);
+        }
+        
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+        }
+        
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary);
+        }
+        
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        .form-control {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--dark-gray);
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--light);
+            color: var(--primary);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-logo img {
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--light);
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        
+        /* Quote Modal Styles */
+        .modal-header {
+            border-bottom: 3px solid var(--primary);
+            padding: 20px 25px;
+        }
+        
+        .modal-title {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .modal-body iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        
+        .modal-footer {
+            border-top: 3px solid var(--primary);
+            padding: 15px 25px;
+        }
+        
+        /* Stats Counter */
+        .stats-section {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Quotation Box Styles */
+        .quotation-box {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary);
+            margin: 30px 0;
+        }
+        
+        .quotation-box p {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 0;
+        }
+        
+        .quotation-box .author {
+            text-align: right;
+            font-weight: 600;
+            margin-top: 15px;
+            color: var(--primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .modal-body iframe {
+                height: 500px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .btn-primary {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .instagram-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover, .instagram-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-icon, .instagram-icon {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="C:\Users\dell\OneDrive\Desktop\web\2.jpg" alt="Chidanand Solar Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Why Us?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary ms-lg-3" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                    <i class="fas fa-bolt me-2"></i> Get Free Quotation
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h1>Slash Your Electricity Bills by <span style="color: var(--primary);">100%</span> with Solar Power!</h1>
+                    <p>Join <strong>1000+</strong> happy customers who switched to Chidanand Solar and now enjoy <strong>free electricity for 25+ years!</strong></p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="tel:+917600198889" class="btn btn-lg text-white" style="background-color: #FF6B00; border: none;">
+  <i class="fas fa-phone-alt me-2"></i> Call Now
+</a>
+
+                    </div>
+                    <div class="mt-4 d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span class="ms-2">5-Star Rated</span>
+                        </div>
+                        <div class="me-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span class="ms-2">25-Year Warranty</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span class="ms-2">Govt. Approved</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Solar Panels" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Bill Savings</div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Year Warranty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">India's Most Trusted Solar Company</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About Us" class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Why <span style="color: var(--primary);">Chidanand Solar</span> is Different</h3>
+                    <p>We're not just another solar company - we're <strong>energy revolutionaries</strong> committed to making solar power affordable for every Indian home and business.</p>
+                    <p>With <strong>5+ years</strong> of expertise, we've perfected the art of solar installation to deliver <strong>maximum savings with minimal hassle</strong>.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span><strong>BIS Certified</strong> Solar Panels</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span><strong>Govt. Subsidy</strong> Assistance</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span><strong>24/7</strong> Monitoring Support</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span><strong>5-Star</strong> Google Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+           
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">How Solar Power <span style="color: var(--primary);">Benefits You</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h4>Zero Electricity Bills</h4>
+                        <p>Our customers save <strong>₹50,000+ annually</strong> by generating their own power instead of paying the electricity company.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Blackout Protection</h4>
+                        <p>Never worry about power cuts again. Solar + battery systems provide <strong>24/7 uninterrupted power</strong>.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Increase Home Value</h4>
+                        <p>Homes with solar sell <strong>20% faster</strong> and for <strong>4-6% more</strong> according to real estate studies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>25-Year Warranty</h4>
+                        <p>Our solar panels come with a <strong>25-year performance guarantee</strong> - they'll still produce 80%+ power after 25 years!</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h4>40% Govt. Subsidy</h4>
+                        <p>We help you claim <strong>up to 40% subsidy</strong> under central and state solar policies to reduce your cost.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Carbon Neutral</h4>
+                        <p>Each 5kW system prevents <strong>8 tons of CO2 annually</strong> - equivalent to planting 200 trees every year!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Why <span style="color: var(--primary);">1000+ Customers</span> Chose Us</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Tier-1 Solar Panels</h4>
+                        <p>We use only <strong>premium Mono PERC panels</strong> with 21%+ efficiency and 25-year output warranty from leading brands.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Expert Engineers</h4>
+                        <p>Our <strong>NABCEP-certified</strong> team has installed over 5MW of solar systems across India with perfect safety records.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Custom Solutions</h4>
+                        <p>Every system is <strong>tailored</strong> to your roof type, budget, and energy needs for maximum savings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>7-Day Installation</h4>
+                        <p>From survey to activation in <strong>just 7 days</strong> with minimal disruption to your home or business.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>5-Year Workmanship Warranty</h4>
+                        <p>While others offer 1-2 years, we guarantee our installations for <strong>5 full years</strong>.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Monitoring</h4>
+                        <p>Our <strong>smart apps</strong> let you track solar production in real-time from anywhere.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Our <span style="color: var(--primary);">Recent Projects</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Residential Installation" class="img-fluid project-img">
+                        <div class="project-info">
+                            <h4>5kW Home System - Bangalore</h4>
+                            <p class="text-muted"><i class="fas fa-user me-2"></i> Mr. Sharma, 3BHK Villa</p>
+                            <p>Eliminated ₹7,500/month bill with a 5kW system. Now earns ₹1,200/month selling extra power!</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-primary">₹3.2L After Subsidy</span>
+                                <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Commercial Project" class="img-fluid project-img">
+                        <div class="project-info">
+                            <h4>25kW Factory System - Pune</h4>
+                            <p class="text-muted"><i class="fas fa-building me-2"></i> Rajesh Engineering Works</p>
+                            <p>Reduced ₹28,000/month diesel generator costs by 90% with solar + battery hybrid system.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-primary">₹11.5L After Subsidy</span>
+                                <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Solar Farm" class="img-fluid project-img">
+                        <div class="project-info">
+                            <h4>100kW Farm System - Maharashtra</h4>
+                            <p class="text-muted"><i class="fas fa-tractor me-2"></i> Patil Agri Farms</p>
+                            <p>Powering irrigation pumps 24/7, saving ₹1.2L/month in electricity and diesel costs.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-primary">₹42L After Subsidy</span>
+                                <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">What Our <span style="color: var(--primary);">Customers Say</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-img">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"My electricity bill went from ₹6,500 to just ₹300! Chidanand Solar's team was professional and completed installation in 5 days. Highly recommended!"</p>
+                        <h5 class="mt-3">- Ramesh Patel</h5>
+                        <p class="text-muted">Ahmedabad, Gujarat</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-img">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"After installing solar, our school's electricity costs dropped by 85%. The best part? We got 40% subsidy with Chidanand's help. Excellent service!"</p>
+                        <h5 class="mt-3">- Priya Sharma</h5>
+                        <p class="text-muted">Principal, Surat Public School</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-img">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Our textile unit was spending ₹1.2L/month on electricity. With Chidanand's 100kW system, we're saving ₹90,000/month. ROI in just 3 years!"</p>
+                        <h5 class="mt-3">- Vikram Mehta</h5>
+                        <p class="text-muted">Director, Mehta Fabrics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title text-white">Ready to <span style="color: var(--primary);">Go Solar?</span></h2>
+                    <p class="text-white-50">Get a FREE consultation with our solar experts today!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3 class="text-white mb-4">Contact Information</h3>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="contact-icon fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5 class="text-white">Corporate Office</h5>
+                                <p>Shop no.-1, Chandrakiran App, Chikuwadi Rd, Rangdarshan Society, Katargam, Surat, Gujarat 395004</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="contact-icon fas fa-phone-alt"></i>
+                            <div>
+                                <h5 class="text-white">Call Us 24/7</h5>
+                                 <p>+91 76001 98889</p>
+								 <p>+91 90991 28910</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="contact-icon fas fa-envelope"></i>
+                            <div>
+                                <h5 class="text-white">Email Us</h5>
+                                <p>chidanandsolar@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="contact-icon fas fa-clock"></i>
+                            <div>
+                                <h5 class="text-white">Working Hours</h5>
+                                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="text-white mb-3">Connect With Us</h5>
+                            <a href="https://wa.me/917600198889" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.facebook.com/share/18a3jXjwxg/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/chidanand_solar?igsh=NXZkMjRkNWJlcXZo" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/chidanandsolar" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/chidanand-solar/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <h3 class="text-white mb-4">Get Your Free Solar Assessment</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="Phone Number" required>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="col-md-6">
+                               <select class="form-control">
+                                    <option value="">Interested In</option>
+                                    <option value="residential">Residential Solar</option>
+                                    <option value="commercial">Commercial Solar</option>
+                                    <option value="industrial">Industrial Solar</option>
+                                    <option value="maintenance">System Maintenance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <textarea class="form-control" rows="4" placeholder="Your Message (Optional)"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mt-4 py-3">
+                            <i class="fas fa-paper-plane me-2"></i> Get Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">
+                        <img src="https://via.placeholder.com/200x70?text=Chidanand+Solar" alt="Chidanand Solar Logo">
+                    </div>
+                    <p>Chidanand Solar is India's fastest-growing solar company, helping homeowners and businesses save money while saving the planet.</p>
+                    <div class="mt-3">
+                        <a href="https://wa.me/919876543210" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/chidanandsolar" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/chidanandsolar" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/chidanandsolar" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/company/chidanandsolar" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#benefits">Benefits</a></li>
+                            <li><a href="#features">Why Choose Us</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="#">Residential Solar</a></li>
+                            <li><a href="#">Commercial Solar</a></li>
+                            <li><a href="#">Industrial Solar </a></li>
+                            <li><a href="#">Ground Mount Solar</a></li>
+                            <li><a href="#">Solar Maintenance</a></li>
+                            <li><a href="#">Consultation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i>Shop no.-1, Chandrakiran App, Chikuwadi Rd, Rangdarshan Society, Katargam, Surat, Gujarat 395004</li>
+                            <li><i class="fas fa-phone-alt me-2"></i>+91 76001 98889</li>
+                            <li><i class="fas fa-envelope me-2"></i>chidanandsolar@gmail.com</li>
+                        </ul>
+                        <h5 class="mt-4">Newsletter</h5>
+                        <form class="mt-3">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center copyright">
+                    <p class="mb-0">&copy; 2023 Chidanand Solar. All Rights Reserved. | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms & Conditions</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quoteModalLabel"><i class="fas fa-solar-panel me-2"></i> Free Solar Savings Calculator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="calculator.html"></iframe>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+917600198889" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <!-- Instagram Floating Button -->
+    <a href="https://instagram.com/chidanandsolar" target="_blank" class="instagram-float">
+        <i class="fab fa-instagram instagram-icon"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+	
+
+
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.querySelector('.navbar-brand img').style.height = '60px';
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.querySelector('.navbar-brand img').style.height = '70px';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
