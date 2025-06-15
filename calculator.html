@@ -17,7 +17,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--gray);
       margin: 0;
-      padding: 20px; /* Added body padding */
+      padding: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,7 +40,7 @@
     .calculator-header {
       background: var(--primary);
       color: var(--light);
-      padding: 25px 20px; /* Increased vertical padding */
+      padding: 25px 20px;
       text-align: center;
     }
     
@@ -51,29 +51,29 @@
     }
     
     .calculator-body {
-      padding: 30px; /* Maintained padding */
+      padding: 30px;
     }
     
     .form-group {
-      margin-bottom: 25px; /* Increased spacing between fields */
+      margin-bottom: 25px;
     }
     
     label {
       display: block;
-      margin-bottom: 10px; /* Increased label spacing */
+      margin-bottom: 10px;
       font-weight: 600;
       color: var(--secondary);
-      padding-left: 5px; /* Added slight padding */
+      padding-left: 5px;
     }
     
     input, select {
       width: 100%;
-      padding: 14px 15px; /* Increased padding */
+      padding: 14px 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
       font-size: 16px;
       transition: all 0.3s;
-      box-sizing: border-box; /* Ensures padding doesn't affect width */
+      box-sizing: border-box;
     }
     
     input:focus, select:focus {
@@ -114,7 +114,6 @@
     .btn-call {
       background: #2980b9;
       width: 48%;
-      margin-left: 4%;
     }
     
     .btn-whatsapp:hover {
@@ -128,10 +127,31 @@
     }
     
     .action-buttons {
-      display: flex;
-      justify-content: space-between;
       margin-top: 20px;
       display: none;
+    }
+    
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      width: 100%;
+    }
+    
+    .disclaimer-note {
+      background: #FFF8E6;
+      color: #8B5A00;
+      border-left: 4px solid var(--primary);
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 14px;
+      border-radius: 0 8px 8px 0;
+      text-align: center;
+    }
+    
+    .disclaimer-note i {
+      color: var(--primary);
+      margin-right: 5px;
     }
     
     .results {
@@ -181,7 +201,6 @@
       to { opacity: 1; }
     }
     
-    /* Responsive */
     @media (max-width: 768px) {
       .calculator-container {
         margin: 20px;
@@ -190,15 +209,16 @@
       .calculator-header h1 {
         font-size: 1.5rem;
       }
-      
-      .action-buttons {
+    }
+    
+    @media (max-width: 480px) {
+      .button-row {
         flex-direction: column;
+        gap: 10px;
       }
       
       .btn-whatsapp, .btn-call {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
+        width: 100% !important;
       }
     }
   </style>
@@ -221,10 +241,9 @@
       </div>
       
       <div class="form-group">
-  <label for="city">City/District</label>
-  <input type="text" id="city" placeholder="Enter your city or district" required>
-  </div>
-
+        <label for="city">City/District</label>
+        <input type="text" id="city" placeholder="Enter your city or district" required>
+      </div>
       
       <div class="form-group">
         <label for="pincode">Pincode</label>
@@ -284,24 +303,21 @@
           <div class="result-value">₹<span id="summaryCost"></span></div>
         </div>
       </div>
-      <div class="action-buttons" id="actionButtons" style="margin-top: 20px; display: none;">
-  
-  <!-- Button Row -->
-  <div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
-    <button class="btn btn-whatsapp" onclick="sendWhatsApp()" style="flex: 1; min-width: 48%;">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </button>
-    <button class="btn btn-call" onclick="makeCall()" style="flex: 1; min-width: 48%;">
-      <i class="fas fa-phone"></i> Call Us
-    </button>
-  </div>
-
-  <!-- Note Below Buttons -->
-  <div style="background: #fef6e4; color: #8b4d00; border: 1px solid #ffddb0; border-radius: 6px; padding: 15px; margin-top: 15px; font-size: 1rem; text-align: center;">
-    💡 Thank you for using our calculator! Please remember this is just a preliminary estimate. Our team will provide you with a detailed and final quotation after a free site visit, where we inspect the rooftop and understand your actual power needs.
-  </div>
-</div>
-    </div>
+      
+      <div class="action-buttons" id="actionButtons">
+        <div class="button-row">
+          <button class="btn btn-whatsapp" onclick="sendWhatsApp()">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </button>
+          <button class="btn btn-call" onclick="makeCall()">
+            <i class="fas fa-phone"></i> Call Us
+          </button>
+        </div>
+        
+        <div class="disclaimer-note">
+          <i class="fas fa-info-circle"></i> Thank you for using our calculator! Please remember this is just a preliminary estimate. Our team will provide you with a detailed and final quotation after a free site visit, where we inspect the rooftop and understand your actual power needs.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -351,7 +367,7 @@
       document.getElementById("summaryCost").textContent = estimatedCost.toLocaleString();
 
       document.getElementById("results").style.display = "block";
-      document.getElementById("actionButtons").style.display = "flex";
+      document.getElementById("actionButtons").style.display = "block";
       
       // Smooth scroll to results
       document.getElementById("results").scrollIntoView({ behavior: 'smooth' });
