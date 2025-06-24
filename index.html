@@ -1136,6 +1136,23 @@
                 });
             });
         });
+	    // Get the modal trigger button
+const quoteButton = document.querySelector('[data-bs-target="#quoteModal"]');
+
+// When quote button is clicked, update the URL
+quoteButton.addEventListener('click', function() {
+    // Change the URL to include a hash (e.g., #get-quote)
+    history.pushState({}, "", "#get-quote");
+});
+
+// Optional: Handle browser back button
+window.addEventListener('popstate', function() {
+    if (window.location.hash !== "#get-quote") {
+        // Close the modal if user navigates back
+        const modal = bootstrap.Modal.getInstance(document.getElementById('quoteModal'));
+        if (modal) modal.hide();
+    }
+});
     </script>
 </body>
 </html>
