@@ -513,7 +513,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="2.jpg" alt="Chidanand Solar Logo">
+                <img src="C:\Users\dell\OneDrive\Desktop\web\2.jpg" alt="Chidanand Solar Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -551,9 +551,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7" data-aos="fade-right">
-                   <h1>Cut Your Electricity Bills by Up to<span style="color: var(--primary);">100%</span>with Solar Power!</h1>
+                    <h1>Cut Your Electricity Bills by Up to<span style="color: var(--primary);">100%</span>with Solar Power!</h1>
                     <p>Join <strong>1000+</strong> happy customers who switched to Chidanand Solar and now enjoy <strong>free electricity for 25+ years!</strong></p>
-                    <div class="d-flex flex-wrap gap-3">
+					<div class="d-flex flex-wrap gap-3">
     <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal">
         <i class="fas fa-bolt me-2"></i> Get Free Quotation
     </button>
@@ -562,6 +562,8 @@
         <i class="fas fa-phone-alt me-2"></i> Call Now
     </a>
 </div>
+
+
                     <div class="mt-4 d-flex align-items-center">
                         <div class="me-3">
                             <i class="fas fa-check-circle text-primary"></i>
@@ -1103,56 +1105,105 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-	
-
-
-        // Initialize AOS animation
+	<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS animation
+    if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
         
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                navbar.querySelector('.navbar-brand img').style.height = '60px';
-            } else {
-                navbar.classList.remove('scrolled');
-                navbar.querySelector('.navbar-brand img').style.height = '70px';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const logo = navbar.querySelector('.navbar-brand img');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+            if (logo) logo.style.height = '60px';
+        } else {
+            navbar.classList.remove('scrolled');
+            if (logo) logo.style.height = '70px';
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
                     behavior: 'smooth'
                 });
-            });
+            }
         });
-	    // Get the modal trigger button
-const quoteButton = document.querySelector('[data-bs-target="#quoteModal"]');
+    });
 
-// When quote button is clicked, update the URL
-quoteButton.addEventListener('click', function() {
-    // Change the URL to include a hash (e.g., #get-quote)
-    history.pushState({}, "", "#get-quote");
-});
-
-// Optional: Handle browser back button
-window.addEventListener('popstate', function() {
-    if (window.location.hash !== "#get-quote") {
-        // Close the modal if user navigates back
-        const modal = bootstrap.Modal.getInstance(document.getElementById('quoteModal'));
-        if (modal) modal.hide();
+    // Quote modal functionality
+    const quoteButton = document.querySelector('[data-bs-target="#quoteModal"]');
+    if (quoteButton) {
+        quoteButton.addEventListener('click', function() {
+            history.pushState({}, "", "#get-quote");
+        });
     }
+
+    // Function to show modal
+    function showQuoteModal() {
+        const modalEl = document.getElementById('quoteModal');
+        if (!modalEl) return false;
+        
+        try {
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+            return true;
+        } catch (e) {
+            console.error("Failed to show modal:", e);
+            return false;
+        }
+    }
+
+    // Check URL hash and show modal
+    function checkHashAndShowModal() {
+        if (window.location.hash === "#get-quote") {
+            // Try immediately
+            if (showQuoteModal()) return;
+            
+            // If failed, try again after short delay
+            setTimeout(() => {
+                if (!showQuoteModal()) {
+                    console.warn("Modal still not available after retry");
+                }
+            }, 300);
+        }
+    }
+
+    // Initial check
+    checkHashAndShowModal();
+
+    // Also check when window loads (in case dependencies load later)
+    window.addEventListener('load', checkHashAndShowModal);
+
+    // Handle browser back button
+    window.addEventListener('popstate', function() {
+        if (window.location.hash !== "#get-quote") {
+            const modalEl = document.getElementById('quoteModal');
+            if (modalEl) {
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+            }
+        } else {
+            checkHashAndShowModal();
+        }
+    });
 });
-    </script>
+</script>
 </body>
 </html>
