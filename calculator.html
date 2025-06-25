@@ -181,7 +181,7 @@ body {
     font-weight: 700;
     color: #2c2c2c;
     text-align: center;
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
 .bill-amount-display span {
@@ -445,7 +445,7 @@ body {
                     <div class="form-group">
                         <label for="city">City</label>
                         <input type="text" id="city" class="form-control" placeholder="Enter your city name" maxlength="30"required>
-                    </div>required
+                    </div>
 
                     <div class="form-group">
                         <label for="pincode">Pincode</label>
@@ -454,20 +454,27 @@ body {
 
                     <div class="form-group">
                         <label>Average Monthly Electricity Bill</label>
-                        <div class="bill-slider-container">
-                            <input type="range" min="1000" max="15000" step="100" value="0" class="bill-slider" id="billSlider">
-                            <div class="bill-amount-display">
-  ₹<span id="billAmount">5,000</span> <span class="per-month">/month</span>
-</div>
 
-                            <div class="bill-presets">
-                                <button class="bill-preset" data-amount="2000">₹2K</button>
-                                <button class="bill-preset" data-amount="3000">₹3K</button>
-                                <button class="bill-preset" data-amount="5000">₹5K</button>
-                                <button class="bill-preset" data-amount="10000">₹10K</button>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="calculator-controls">
+						 <div class="bill-presets">
+            <button class="bill-preset" data-amount="2000">₹2K</button>
+            <button class="bill-preset" data-amount="3000">₹3K</button>
+            <button class="bill-preset" data-amount="4000">₹4K</button>
+            <button class="bill-preset" data-amount="5000">₹5K</button>
+        </div>
+ 
+    
+    <!-- Bill amount display second -->
+    <div class="bill-amount-display">
+        ₹<span id="billAmount">5,000</span> <span class="per-month">/month</span>
+    </div>
+    
+    <!-- Slider container third -->
+    <div class="bill-slider-container">
+        <input type="range" min="1000" max="10000" step="100" value="5000" class="bill-slider" id="billSlider">
+        
+    </div>
+</div>
 
                     <div class="results-container">
                         <div class="results-header">Your Solar Savings</div>
@@ -661,7 +668,6 @@ body {
 </button>
                     </div>
                 </div>
-                
                 <!-- Ground Mounted Solar Form -->
                 <div id="groundMountedCalculator" class="hidden calculator-section">
                     <div class="calculator-header">
@@ -796,6 +802,7 @@ function initializeResidentialCalculator() {
 }
 
 // Calculate solar details based on bill amount
+// Updated calculateSolarDetails function based on Excel calculations
 function calculateSolarDetails(bill) {
     if (bill <= 0) {
         return {
@@ -809,47 +816,67 @@ function calculateSolarDetails(bill) {
         };
     }
     
-    let systemSize, systemCost, subsidy, monthlySavings;
+    let systemSize, systemCost, subsidy, costPerKw;
     
+    // Determine system size, cost per kW, and subsidy based on bill amount
     if (bill <= 2000) {
-        systemSize = 2;
-        systemCost = 96000;
-        subsidy = 60000;
+        systemSize = 2.18;
+        costPerKw = 48000;
+        subsidy = (2 * 30000) + (0.18 * 18000);
+    } else if (bill <= 2500) {
+        systemSize = 545 * 5 / 1000; // 2.725 kW
+        costPerKw = 48000;
+        subsidy = (2 * 30000) + (0.725 * 18000);
     } else if (bill <= 3000) {
-        systemSize = 3;
-        systemCost = 144000;
+        systemSize = 545 * 6 / 1000; // 3.27 kW
+        costPerKw = 46000;
+        subsidy = 78000;
+    } else if (bill <= 3500) {
+        systemSize = 545 * 7 / 1000; // 3.815 kW
+        costPerKw = 46000;
         subsidy = 78000;
     } else if (bill <= 4000) {
-        systemSize = 4;
-        systemCost = 192000;
+        systemSize = 545 * 8 / 1000; // 4.36 kW
+        costPerKw = 46000;
+        subsidy = 78000;
+    } else if (bill <= 4500) {
+        systemSize = 545 * 9 / 1000; // 4.905 kW
+        costPerKw = 44000;
         subsidy = 78000;
     } else if (bill <= 5000) {
-        systemSize = 5;
-        systemCost = 240000;
+        systemSize = 545 * 10 / 1000; // 5.45 kW
+        costPerKw = 44000;
         subsidy = 78000;
-    } else if (bill <= 7500) {
-        systemSize = 7.5;
-        systemCost = 360000;
+    } else if (bill <= 6000) {
+        systemSize = 545 * 11 / 1000; // 5.995 kW
+        costPerKw = 44000;
+        subsidy = 78000;
+    } else if (bill <= 8000) {
+        systemSize = 545 * 15 / 1000; // 8.175 kW
+        costPerKw = 41000;
         subsidy = 78000;
     } else {
-        systemSize = Math.ceil(bill / 1000);
-        systemCost = systemSize * 48000;
+        systemSize = 545 * 18 / 1000; // 9.81 kW
+        costPerKw = 40000;
         subsidy = 78000;
     }
     
-    // Calculate savings (80% of bill as savings)
-    monthlySavings = bill * 0.8;
+    // Calculate system cost
+    systemCost = systemSize * costPerKw;
+    
+    // Calculate savings (30 days * 4 hours * 8 rupees per unit)
+    const monthlySavings = systemSize * 30 * 4 * 8;
     const annualSavings = monthlySavings * 12;
     const finalCost = systemCost - subsidy;
     const paybackPeriod = (finalCost / annualSavings).toFixed(1);
     
     return {
-        systemSize,
-        systemCost,
-        subsidy,
-        monthlySavings,
-        annualSavings,
-        finalCost,
+        systemSize: systemSize.toFixed(2),
+        systemCost: Math.round(systemCost),
+        subsidy: Math.round(subsidy),
+        monthlySavings: Math.round(monthlySavings),
+        annualSavings: Math.round(annualSavings),
+        finalCost: Math.round(finalCost),
         paybackPeriod
     };
 }
